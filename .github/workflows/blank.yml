@@ -1,0 +1,15 @@
+
+name: CI
+on: [push]
+
+jobs:
+  build:
+    timeout-minutes: 60
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run tests
+        run: ./gradlew testRelease
