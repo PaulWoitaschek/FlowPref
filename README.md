@@ -6,10 +6,11 @@ FlowPref is a library for making Preferences composable, typesafe and reactive (
 
 ```kotlin
 // create a flow pref backed by shared preferences
-val sharedPrefs = context.getSharedPreferences(System.nanoTime().toString(), Context.MODE_PRIVATE)
+val sharedPrefs = context.getSharedPreferences("prefName", Context.MODE_PRIVATE)
+// ensure this is a singleton across process
 val flowPref = FlowPref(sharedPrefs)
 
-val intPref = prefs.int("key", 42)
+val intPref = prefs.int("prefKey", 42)
 
 // write and get values
 intPref.value = 5
