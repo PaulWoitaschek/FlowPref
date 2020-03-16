@@ -1,6 +1,7 @@
 package de.paulwoitaschek.flowpref.internal
 
 import android.content.SharedPreferences
+import androidx.core.content.edit
 import de.paulwoitaschek.flowpref.Pref
 import de.paulwoitaschek.flowpref.adapter.PrefAdapter
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -43,5 +44,9 @@ internal class RealPref<T>(
 
   override fun setAndCommit(value: T) {
     adapter.set(key, prefs, value, commit = true)
+  }
+
+  override fun delete() {
+    prefs.edit { remove(key) }
   }
 }

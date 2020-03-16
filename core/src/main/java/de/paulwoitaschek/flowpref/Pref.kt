@@ -11,4 +11,6 @@ abstract class Pref<T> : ReadWriteProperty<Any, T> {
   abstract fun setAndCommit(value: T)
 
   abstract val flow: Flow<T>
+
+  abstract fun delete()
 }

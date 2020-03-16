@@ -96,4 +96,31 @@ class FlowPrefTest {
     collectJobA.cancel()
     collectJobB.cancel()
   }
+
+  @Test
+  fun delete() {
+    val pref = prefs.int("key", 42)
+    val values = mutableListOf<Int>()
+    val collectJob = GlobalScope.launch(Dispatchers.Main) {
+      pref.flow.collect {
+        values += it
+      }
+    }
+
+    fun assert(vararg expected: Int) {
+      assertThat(values).isEqualTo(expected.toList())
+    }
+
+    fun put(value: Int) {
+      pref.setAndCommit(value)
+    }
+
+    assert(42)
+    put(43)
+    assert(42, 43)
+    pref.delete()
+    assert(42, 43, 42)
+
+    collectJob.cancel()
+  }
 }
