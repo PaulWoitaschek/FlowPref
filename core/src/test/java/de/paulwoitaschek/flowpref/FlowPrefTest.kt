@@ -5,6 +5,7 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
 import de.paulwoitaschek.flowpref.adapter.IntAdapter
+import de.paulwoitaschek.flowpref.adapter.int
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.collect
@@ -26,7 +27,7 @@ class FlowPrefTest {
 
   @Test
   fun flowUpdated() {
-    val pref = prefs.create(IntAdapter, "key", 42)
+    val pref = prefs.int("key", 42)
     val values = mutableListOf<Int>()
     val collectJob = GlobalScope.launch(Dispatchers.Main) {
       pref.flow.collect {
@@ -53,7 +54,7 @@ class FlowPrefTest {
 
   @Test
   fun onlyChangedFlowTriggers() {
-    val prefA = prefs.create(IntAdapter, "preA", 42)
+    val prefA = prefs.int("preA", 42)
     val valuesA = mutableListOf<Int>()
     val collectJobA = GlobalScope.launch(Dispatchers.Main) {
       prefA.flow.collect {
