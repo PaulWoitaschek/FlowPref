@@ -1,2 +1,3 @@
 rootProject.name='FlowPref'
 include ':core'
+include ':android'
