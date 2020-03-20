@@ -61,7 +61,7 @@ class FlowPrefTest {
       }
     }
 
-    val prefB = prefs.create(IntAdapter, "prefB", 42)
+    val prefB = prefs.create("prefB", 42, IntAdapter)
     val valuesB = mutableListOf<Int>()
     val collectJobB = GlobalScope.launch(Dispatchers.Main) {
       prefB.flow.collect {

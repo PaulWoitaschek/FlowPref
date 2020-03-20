@@ -26,11 +26,16 @@ class FlowPref(private val sharedPrefs: SharedPreferences) {
     sharedPrefs.registerOnSharedPreferenceChangeListener(listener)
   }
 
-  fun <T> create(adapter: PrefAdapter<T>, key: String, default: T): Pref<T> {
-    return create(DelegatingPrefAdapter(adapter), key, default)
+  @Suppress("unused")
+  fun <T> create(key: String, default: T, adapter: PrefAdapter<T>): Pref<T> {
+    return create(key, default, DelegatingPrefAdapter(adapter))
   }
 
-  internal fun <T> create(adapter: InternalPrefAdapter<T>, key: String, default: T): Pref<T> {
+  internal fun <T> create(
+    key: String,
+    default: T,
+    adapter: InternalPrefAdapter<T>
+  ): Pref<T> {
     return RealPref(
       sharedPrefs,
       adapter,

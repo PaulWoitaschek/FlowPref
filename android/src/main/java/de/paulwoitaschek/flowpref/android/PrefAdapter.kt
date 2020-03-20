@@ -2,6 +2,6 @@ package de.paulwoitaschek.flowpref.android
 
 interface PrefAdapter<T> {
 
-  fun serialize(value: T): String?
-  fun parse(string: String?): T
+  fun toString(value: T): String?
+  fun fromString(string: String?): T
 }
