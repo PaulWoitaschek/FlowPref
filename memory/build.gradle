@@ -1,4 +1,19 @@
+plugins {
+    id 'maven-publish'
+}
+
 apply plugin: 'kotlin'
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = rootProject.ext.groupId
+            artifactId = 'memory'
+            version = rootProject.ext.version
+            from components.java
+        }
+    }
+}
 
 dependencies {
     api(project(":core"))

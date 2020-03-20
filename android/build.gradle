@@ -1,3 +1,7 @@
+plugins {
+    id 'maven-publish'
+}
+
 apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
 
@@ -7,6 +11,20 @@ android {
         minSdkVersion 21
     }
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                groupId = rootProject.ext.groupId
+                artifactId = 'android'
+                version = rootProject.ext.version
+                from components.release
+            }
+        }
+    }
+}
+
 
 dependencies {
     api(project(":core"))
