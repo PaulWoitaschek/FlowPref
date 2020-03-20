@@ -3,7 +3,6 @@ package de.paulwoitaschek.flowpref.android.internal
 import android.content.SharedPreferences
 import androidx.core.content.edit
 import de.paulwoitaschek.flowpref.Pref
-import de.paulwoitaschek.flowpref.android.adapter.PrefAdapter
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.channels.ConflatedBroadcastChannel
@@ -14,7 +13,7 @@ import kotlin.reflect.KProperty
 @OptIn(FlowPreview::class, ExperimentalCoroutinesApi::class)
 internal class RealPref<T>(
   private val prefs: SharedPreferences,
-  private val adapter: PrefAdapter<T>,
+  private val adapter: InternalPrefAdapter<T>,
   val key: String,
   private val default: T
 ) : Pref<T>() {

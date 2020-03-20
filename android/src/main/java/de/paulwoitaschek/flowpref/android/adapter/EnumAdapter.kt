@@ -5,8 +5,10 @@ import android.content.SharedPreferences
 import androidx.core.content.edit
 import de.paulwoitaschek.flowpref.Pref
 import de.paulwoitaschek.flowpref.android.FlowPref
+import de.paulwoitaschek.flowpref.android.internal.InternalPrefAdapter
 
-internal class EnumAdapter<E : Enum<E>>(private val clazz: Class<E>) : PrefAdapter<E> {
+internal class EnumAdapter<E : Enum<E>>(private val clazz: Class<E>) :
+  InternalPrefAdapter<E> {
 
   override fun get(key: String, prefs: SharedPreferences): E {
     val stringValue = prefs.getString(key, "")!!

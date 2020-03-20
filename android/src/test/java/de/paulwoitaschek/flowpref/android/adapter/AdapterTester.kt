@@ -4,8 +4,9 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.test.core.app.ApplicationProvider
 import com.google.common.truth.Truth.assertThat
+import de.paulwoitaschek.flowpref.android.internal.InternalPrefAdapter
 
-class AdapterTester<T>(private val adapter: PrefAdapter<T>) {
+internal class AdapterTester<T>(private val adapter: InternalPrefAdapter<T>) {
 
   private val key = System.nanoTime().toString()
 

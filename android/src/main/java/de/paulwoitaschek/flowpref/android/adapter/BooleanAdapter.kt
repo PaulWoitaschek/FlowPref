@@ -4,8 +4,9 @@ import android.content.SharedPreferences
 import androidx.core.content.edit
 import de.paulwoitaschek.flowpref.Pref
 import de.paulwoitaschek.flowpref.android.FlowPref
+import de.paulwoitaschek.flowpref.android.internal.InternalPrefAdapter
 
-internal object BooleanAdapter : PrefAdapter<Boolean> {
+internal object BooleanAdapter : InternalPrefAdapter<Boolean> {
 
   override fun get(key: String, prefs: SharedPreferences): Boolean {
     return prefs.getBoolean(key, false)

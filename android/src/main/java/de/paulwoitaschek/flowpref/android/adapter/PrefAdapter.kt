@@ -1,10 +1,7 @@
 package de.paulwoitaschek.flowpref.android.adapter
 
-import android.content.SharedPreferences
-
 interface PrefAdapter<T> {
 
-  fun get(key: String, prefs: SharedPreferences): T
-
-  fun set(key: String, prefs: SharedPreferences, value: T, commit: Boolean = false)
+  fun serialize(value: T): String?
+  fun parse(string: String?): T
 }
