@@ -44,6 +44,10 @@ allprojects {
 And add the dependency:
 ```groovy
 dependencies {
-    compile 'com.github.PaulWoitaschek:FlowPref:x.y.z'
+    // android implementation
+    compile 'com.github.PaulWoitaschek:FlowPref:android:x.y.z'
+
+    // an in-memory implementation, useful for testing
+    compile 'com.github.PaulWoitaschek:FlowPref:memory:x.y.z'
 }
 ```
