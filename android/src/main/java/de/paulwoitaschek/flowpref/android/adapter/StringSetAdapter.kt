@@ -1,9 +1,9 @@
-package de.paulwoitaschek.flowpref.adapter
+package de.paulwoitaschek.flowpref.android.adapter
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import de.paulwoitaschek.flowpref.FlowPref
 import de.paulwoitaschek.flowpref.Pref
+import de.paulwoitaschek.flowpref.android.FlowPref
 
 object StringSetAdapter : PrefAdapter<Set<String>> {
 

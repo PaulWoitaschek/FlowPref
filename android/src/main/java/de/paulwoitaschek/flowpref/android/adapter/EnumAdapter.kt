@@ -1,10 +1,10 @@
-package de.paulwoitaschek.flowpref.adapter
+package de.paulwoitaschek.flowpref.android.adapter
 
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import de.paulwoitaschek.flowpref.FlowPref
 import de.paulwoitaschek.flowpref.Pref
+import de.paulwoitaschek.flowpref.android.FlowPref
 
 class EnumAdapter<E : Enum<E>>(private val clazz: Class<E>) : PrefAdapter<E> {
 

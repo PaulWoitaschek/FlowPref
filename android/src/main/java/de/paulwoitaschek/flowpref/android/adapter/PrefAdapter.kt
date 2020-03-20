@@ -1,4 +1,4 @@
-package de.paulwoitaschek.flowpref.adapter
+package de.paulwoitaschek.flowpref.android.adapter
 
 import android.content.SharedPreferences
 
