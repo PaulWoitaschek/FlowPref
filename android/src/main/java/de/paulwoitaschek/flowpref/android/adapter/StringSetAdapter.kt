@@ -5,7 +5,7 @@ import androidx.core.content.edit
 import de.paulwoitaschek.flowpref.Pref
 import de.paulwoitaschek.flowpref.android.FlowPref
 
-object StringSetAdapter : PrefAdapter<Set<String>> {
+internal object StringSetAdapter : PrefAdapter<Set<String>> {
 
   override fun get(key: String, prefs: SharedPreferences): Set<String> {
     return prefs.getStringSet(key, emptySet())!!

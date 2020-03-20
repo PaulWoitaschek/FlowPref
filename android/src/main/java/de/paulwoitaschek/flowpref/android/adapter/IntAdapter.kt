@@ -5,7 +5,7 @@ import androidx.core.content.edit
 import de.paulwoitaschek.flowpref.Pref
 import de.paulwoitaschek.flowpref.android.FlowPref
 
-object IntAdapter : PrefAdapter<Int> {
+internal object IntAdapter : PrefAdapter<Int> {
 
   override fun get(key: String, prefs: SharedPreferences): Int {
     return prefs.getInt(key, 0)
