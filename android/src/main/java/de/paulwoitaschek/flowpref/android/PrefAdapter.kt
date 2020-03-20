@@ -1,4 +1,4 @@
-package de.paulwoitaschek.flowpref.android.adapter
+package de.paulwoitaschek.flowpref.android
 
 interface PrefAdapter<T> {
 

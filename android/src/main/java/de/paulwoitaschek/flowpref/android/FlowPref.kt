@@ -2,7 +2,6 @@ package de.paulwoitaschek.flowpref.android
 
 import android.content.SharedPreferences
 import de.paulwoitaschek.flowpref.Pref
-import de.paulwoitaschek.flowpref.android.adapter.PrefAdapter
 import de.paulwoitaschek.flowpref.android.internal.DelegatingPrefAdapter
 import de.paulwoitaschek.flowpref.android.internal.InternalPrefAdapter
 import de.paulwoitaschek.flowpref.android.internal.RealPref

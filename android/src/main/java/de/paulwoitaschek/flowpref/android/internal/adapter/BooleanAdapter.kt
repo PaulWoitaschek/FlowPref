@@ -1,9 +1,7 @@
-package de.paulwoitaschek.flowpref.android.adapter
+package de.paulwoitaschek.flowpref.android.internal.adapter
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import de.paulwoitaschek.flowpref.Pref
-import de.paulwoitaschek.flowpref.android.FlowPref
 import de.paulwoitaschek.flowpref.android.internal.InternalPrefAdapter
 
 internal object BooleanAdapter : InternalPrefAdapter<Boolean> {
@@ -15,9 +13,4 @@ internal object BooleanAdapter : InternalPrefAdapter<Boolean> {
   override fun set(key: String, prefs: SharedPreferences, value: Boolean, commit: Boolean) {
     prefs.edit(commit = commit) { putBoolean(key, value) }
   }
-}
-
-@Suppress("unused")
-fun FlowPref.boolean(key: String, default: Boolean): Pref<Boolean> {
-  return create(BooleanAdapter, key, default)
 }

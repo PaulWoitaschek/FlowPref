@@ -2,7 +2,7 @@ package de.paulwoitaschek.flowpref.android.internal
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import de.paulwoitaschek.flowpref.android.adapter.PrefAdapter
+import de.paulwoitaschek.flowpref.android.PrefAdapter
 
 internal class DelegatingPrefAdapter<T>(private val delegate: PrefAdapter<T>) :
   InternalPrefAdapter<T> {

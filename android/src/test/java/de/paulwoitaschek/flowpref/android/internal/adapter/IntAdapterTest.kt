@@ -1,4 +1,4 @@
-package de.paulwoitaschek.flowpref.android.adapter
+package de.paulwoitaschek.flowpref.android.internal.adapter
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Test

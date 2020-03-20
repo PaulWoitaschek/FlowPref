@@ -1,9 +1,7 @@
-package de.paulwoitaschek.flowpref.android.adapter
+package de.paulwoitaschek.flowpref.android.internal.adapter
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import de.paulwoitaschek.flowpref.Pref
-import de.paulwoitaschek.flowpref.android.FlowPref
 import de.paulwoitaschek.flowpref.android.internal.InternalPrefAdapter
 
 internal object StringAdapter : InternalPrefAdapter<String> {
@@ -17,8 +15,4 @@ internal object StringAdapter : InternalPrefAdapter<String> {
       putString(key, value)
     }
   }
-}
-
-fun FlowPref.string(key: String, default: String): Pref<String> {
-  return create(StringAdapter, key, default)
 }

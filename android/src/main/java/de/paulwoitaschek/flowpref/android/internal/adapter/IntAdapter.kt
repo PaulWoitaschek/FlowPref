@@ -1,9 +1,7 @@
-package de.paulwoitaschek.flowpref.android.adapter
+package de.paulwoitaschek.flowpref.android.internal.adapter
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import de.paulwoitaschek.flowpref.Pref
-import de.paulwoitaschek.flowpref.android.FlowPref
 import de.paulwoitaschek.flowpref.android.internal.InternalPrefAdapter
 
 internal object IntAdapter : InternalPrefAdapter<Int> {
@@ -15,9 +13,4 @@ internal object IntAdapter : InternalPrefAdapter<Int> {
   override fun set(key: String, prefs: SharedPreferences, value: Int, commit: Boolean) {
     prefs.edit(commit = commit) { putInt(key, value) }
   }
-}
-
-@Suppress("unused")
-fun FlowPref.int(key: String, default: Int): Pref<Int> {
-  return create(IntAdapter, key, default)
 }

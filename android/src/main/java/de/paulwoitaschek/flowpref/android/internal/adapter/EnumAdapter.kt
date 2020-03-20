@@ -1,10 +1,8 @@
-package de.paulwoitaschek.flowpref.android.adapter
+package de.paulwoitaschek.flowpref.android.internal.adapter
 
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import de.paulwoitaschek.flowpref.Pref
-import de.paulwoitaschek.flowpref.android.FlowPref
 import de.paulwoitaschek.flowpref.android.internal.InternalPrefAdapter
 
 internal class EnumAdapter<E : Enum<E>>(private val clazz: Class<E>) :
@@ -20,12 +18,3 @@ internal class EnumAdapter<E : Enum<E>>(private val clazz: Class<E>) :
   }
 }
 
-
-fun <E : Enum<E>> FlowPref.enum(key: String, default: E, clazz: Class<E>): Pref<E> {
-  return create(EnumAdapter(clazz), key, default)
-}
-
-@Suppress("unused")
-inline fun <reified E : Enum<E>> FlowPref.enum(key: String, default: E): Pref<E> {
-  return enum(key, default, E::class.java)
-}

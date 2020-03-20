@@ -4,8 +4,7 @@ import android.content.Context
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
-import de.paulwoitaschek.flowpref.android.adapter.IntAdapter
-import de.paulwoitaschek.flowpref.android.adapter.int
+import de.paulwoitaschek.flowpref.android.internal.adapter.IntAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.collect
