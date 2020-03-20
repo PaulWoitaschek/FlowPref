@@ -122,4 +122,31 @@ class FlowPrefTest {
 
     collectJob.cancel()
   }
+
+  @Test
+  fun prefAdapter() {
+    data class Person(val name: String)
+
+    val personAdapter = object : PrefAdapter<Person?> {
+      override fun toString(value: Person?): String? {
+        return value?.name
+      }
+
+      override fun fromString(string: String?): Person? {
+        if (string == null) {
+          return null
+        } else {
+          return Person(string)
+        }
+      }
+    }
+    val personPref = prefs.create("key", null, personAdapter)
+    assertThat(personPref.value).isNull()
+    val peter = Person("Peter")
+    personPref.value = peter
+    assertThat(personPref.value).isEqualTo(peter)
+    personPref.value = null
+    @Suppress("USELESS_CAST") // compiler bug?
+    assertThat(personPref.value as Person?).isNull()
+  }
 }
