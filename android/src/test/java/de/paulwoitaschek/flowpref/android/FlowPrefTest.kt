@@ -128,15 +128,15 @@ class FlowPrefTest {
     data class Person(val name: String)
 
     val personAdapter = object : PrefAdapter<Person?> {
-      override fun toString(value: Person?): String? {
-        return value?.name
+      override fun toString(value: Person?): String {
+        return value?.name ?: "null"
       }
 
-      override fun fromString(string: String?): Person? {
-        if (string == null) {
-          return null
+      override fun fromString(string: String): Person? {
+        return if (string == "null") {
+          null
         } else {
-          return Person(string)
+          Person(string)
         }
       }
     }

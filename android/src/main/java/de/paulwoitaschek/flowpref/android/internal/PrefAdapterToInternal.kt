@@ -8,7 +8,7 @@ internal class DelegatingPrefAdapter<T>(private val delegate: PrefAdapter<T>) :
   InternalPrefAdapter<T> {
 
   override fun get(key: String, prefs: SharedPreferences): T {
-    val stringValue = prefs.getString(key, null)
+    val stringValue = prefs.getString(key, null)!!
     return delegate.fromString(stringValue)
   }
 
