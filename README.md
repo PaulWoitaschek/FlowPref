@@ -48,6 +48,6 @@ dependencies {
     compile 'com.github.PaulWoitaschek:FlowPref:android:x.y.z'
 
     // an in-memory implementation, useful for testing
-    compile 'com.github.PaulWoitaschek:FlowPref:memory:x.y.z'
+    compile 'com.github.PaulWoitaschek:FlowPref:in-memory:x.y.z'
 }
 ```

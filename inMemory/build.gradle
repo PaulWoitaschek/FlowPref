@@ -8,7 +8,7 @@ publishing {
     publications {
         release(MavenPublication) {
             groupId = rootProject.ext.groupId
-            artifactId = 'memory'
+            artifactId = 'in-memory'
             version = rootProject.ext.version
             from components.java
         }

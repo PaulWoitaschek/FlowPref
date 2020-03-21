@@ -1,4 +1,4 @@
-package de.paulwoitaschek.flowpref.memory
+package de.paulwoitaschek.flowpref.inmemory
 
 import de.paulwoitaschek.flowpref.Pref
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -11,7 +11,7 @@ import kotlin.reflect.KProperty
 
 @Suppress("unused")
 @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
-class MemoryPref<T>(private val default: T) : Pref<T>() {
+class InMemoryPref<T>(private val default: T) : Pref<T>() {
 
   private val channel = ConflatedBroadcastChannel(default)
 
