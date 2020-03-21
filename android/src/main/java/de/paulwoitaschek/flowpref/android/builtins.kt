@@ -10,35 +10,35 @@ import de.paulwoitaschek.flowpref.android.internal.adapter.StringSetAdapter
 
 
 @Suppress("unused")
-fun FlowPref.boolean(key: String, default: Boolean): Pref<Boolean> {
+fun PreferenceFactory.boolean(key: String, default: Boolean): Pref<Boolean> {
   return create(key, default, BooleanAdapter)
 }
 
-fun <E : Enum<E>> FlowPref.enum(key: String, default: E, clazz: Class<E>): Pref<E> {
+fun <E : Enum<E>> PreferenceFactory.enum(key: String, default: E, clazz: Class<E>): Pref<E> {
   return create(key, default, EnumAdapter(clazz))
 }
 
 @Suppress("unused")
-inline fun <reified E : Enum<E>> FlowPref.enum(key: String, default: E): Pref<E> {
+inline fun <reified E : Enum<E>> PreferenceFactory.enum(key: String, default: E): Pref<E> {
   return enum(key, default, E::class.java)
 }
 
 @Suppress("unused")
-fun FlowPref.int(key: String, default: Int): Pref<Int> {
+fun PreferenceFactory.int(key: String, default: Int): Pref<Int> {
   return create(key, default, IntAdapter)
 }
 
 @Suppress("unused")
-fun FlowPref.long(key: String, default: Long): Pref<Long> {
+fun PreferenceFactory.long(key: String, default: Long): Pref<Long> {
   return create(key, default, LongAdapter)
 }
 
 
-fun FlowPref.string(key: String, default: String): Pref<String> {
+fun PreferenceFactory.string(key: String, default: String): Pref<String> {
   return create(key, default, StringAdapter)
 }
 
 @Suppress("unused")
-fun FlowPref.stringSet(key: String, default: Set<String>): Pref<Set<String>> {
+fun PreferenceFactory.stringSet(key: String, default: Set<String>): Pref<Set<String>> {
   return create(key, default, StringSetAdapter)
 }

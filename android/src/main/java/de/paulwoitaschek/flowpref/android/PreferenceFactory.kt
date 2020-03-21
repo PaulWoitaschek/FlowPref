@@ -9,7 +9,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 
 @OptIn(FlowPreview::class, ExperimentalCoroutinesApi::class)
-class FlowPref(private val sharedPrefs: SharedPreferences) {
+class PreferenceFactory(private val sharedPrefs: SharedPreferences) {
 
   private val registered = mutableListOf<RealPref<*>>()
 
