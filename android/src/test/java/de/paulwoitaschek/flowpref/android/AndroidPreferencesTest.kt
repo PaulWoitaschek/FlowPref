@@ -7,15 +7,15 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class PreferenceFactoryTest {
+class AndroidPreferencesTest {
 
-  private val prefs: PreferenceFactory
+  private val prefs: AndroidPreferences
 
   init {
     val context = ApplicationProvider.getApplicationContext<Context>()
     val sharedPrefs =
       context.getSharedPreferences(System.nanoTime().toString(), Context.MODE_PRIVATE)
-    prefs = PreferenceFactory(sharedPrefs)
+    prefs = AndroidPreferences(sharedPrefs)
   }
 
   @Test

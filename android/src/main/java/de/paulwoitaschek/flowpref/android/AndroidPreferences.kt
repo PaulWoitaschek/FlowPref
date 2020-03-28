@@ -10,7 +10,7 @@ import kotlinx.coroutines.FlowPreview
 import java.util.concurrent.CopyOnWriteArrayList
 
 @OptIn(FlowPreview::class, ExperimentalCoroutinesApi::class)
-class PreferenceFactory(private val sharedPrefs: SharedPreferences) {
+class AndroidPreferences(private val sharedPrefs: SharedPreferences) {
 
   private val registered = CopyOnWriteArrayList<AndroidPref<*>>()
 
