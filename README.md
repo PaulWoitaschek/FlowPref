@@ -8,9 +8,9 @@ FlowPref is a library for making Preferences composable, typesafe and reactive (
 // create a flow pref backed by shared preferences
 val sharedPrefs = context.getSharedPreferences("prefName", Context.MODE_PRIVATE)
 // ensure this is a singleton across process
-val factory = PreferenceFactory(sharedPrefs)
+val prefs = AndroidPreferences(sharedPrefs)
 
-val intPref = factory.int("prefKey", 42)
+val intPref = prefs.int("prefKey", 42)
 
 // write and get values
 intPref.value = 5
