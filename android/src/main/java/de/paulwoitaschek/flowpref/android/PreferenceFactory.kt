@@ -2,9 +2,9 @@ package de.paulwoitaschek.flowpref.android
 
 import android.content.SharedPreferences
 import de.paulwoitaschek.flowpref.Pref
+import de.paulwoitaschek.flowpref.android.internal.AndroidPref
 import de.paulwoitaschek.flowpref.android.internal.DelegatingPrefAdapter
 import de.paulwoitaschek.flowpref.android.internal.InternalPrefAdapter
-import de.paulwoitaschek.flowpref.android.internal.RealPref
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import java.util.concurrent.CopyOnWriteArrayList
@@ -12,7 +12,7 @@ import java.util.concurrent.CopyOnWriteArrayList
 @OptIn(FlowPreview::class, ExperimentalCoroutinesApi::class)
 class PreferenceFactory(private val sharedPrefs: SharedPreferences) {
 
-  private val registered = CopyOnWriteArrayList<RealPref<*>>()
+  private val registered = CopyOnWriteArrayList<AndroidPref<*>>()
 
   // because the shared preferences use a week reference when registering, we need to keep a reference
   private val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
@@ -37,7 +37,7 @@ class PreferenceFactory(private val sharedPrefs: SharedPreferences) {
     default: T,
     adapter: InternalPrefAdapter<T>
   ): Pref<T> {
-    return RealPref(
+    return AndroidPref(
       sharedPrefs,
       adapter,
       key,

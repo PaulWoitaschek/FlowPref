@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.asFlow
 import kotlin.reflect.KProperty
 
 @OptIn(FlowPreview::class, ExperimentalCoroutinesApi::class)
-internal class RealPref<T>(
+internal class AndroidPref<T>(
   private val prefs: SharedPreferences,
   private val adapter: InternalPrefAdapter<T>,
   val key: String,
