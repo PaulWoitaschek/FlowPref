@@ -46,4 +46,8 @@ class AndroidPreferences(private val sharedPrefs: SharedPreferences) {
       registered += it
     }
   }
+
+  fun clear(commit: Boolean = false) {
+    registered.forEach { it.delete(commit = commit) }
+  }
 }

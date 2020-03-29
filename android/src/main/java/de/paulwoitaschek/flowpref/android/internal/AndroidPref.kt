@@ -45,7 +45,7 @@ internal class AndroidPref<T>(
     adapter.set(key, prefs, value, commit = true)
   }
 
-  override fun delete() {
-    prefs.edit { remove(key) }
+  override fun delete(commit: Boolean) {
+    prefs.edit(commit = commit) { remove(key) }
   }
 }

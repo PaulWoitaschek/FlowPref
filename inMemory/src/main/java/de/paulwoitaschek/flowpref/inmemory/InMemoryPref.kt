@@ -21,7 +21,7 @@ class InMemoryPref<T>(private val default: T) : Pref<T>() {
 
   override val flow: Flow<T> = channel.asFlow()
 
-  override fun delete() {
+  override fun delete(commit: Boolean) {
     channel.offer(default)
   }
 

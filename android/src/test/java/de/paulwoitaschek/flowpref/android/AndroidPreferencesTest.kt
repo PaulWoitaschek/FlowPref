@@ -1,8 +1,10 @@
 package de.paulwoitaschek.flowpref.android
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -10,12 +12,28 @@ import org.junit.runner.RunWith
 class AndroidPreferencesTest {
 
   private val prefs: AndroidPreferences
+  private val sharedPrefs: SharedPreferences
 
   init {
     val context = ApplicationProvider.getApplicationContext<Context>()
-    val sharedPrefs =
-      context.getSharedPreferences(System.nanoTime().toString(), Context.MODE_PRIVATE)
+    sharedPrefs = context.getSharedPreferences(System.nanoTime().toString(), Context.MODE_PRIVATE)
     prefs = AndroidPreferences(sharedPrefs)
+  }
+
+  @Test
+  fun clearClearsMemory() {
+    val pref = prefs.int("key", 42)
+    pref.setAndCommit(5)
+    prefs.clear(commit = true)
+    assertThat(pref.value).isEqualTo(42)
+  }
+
+  @Test
+  fun clearClearsInSharedPreferences() {
+    val pref = prefs.int("key", 42)
+    pref.setAndCommit(5)
+    prefs.clear(commit = true)
+    assertThat(sharedPrefs.getString("key", null)).isEqualTo(null)
   }
 
   @Test

@@ -12,5 +12,5 @@ abstract class Pref<T> : ReadWriteProperty<Any, T> {
 
   abstract val flow: Flow<T>
 
-  abstract fun delete()
+  abstract fun delete(commit: Boolean = false)
 }
