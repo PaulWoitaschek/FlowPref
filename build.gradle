@@ -1,7 +1,7 @@
 buildscript {
 
     ext.kotlinVersion = '1.3.72'
-    ext.version = "0.1.4"
+    ext.version = "0.1.5"
     ext.groupId = "com.github.PaulWoitaschek"
 
     repositories {
