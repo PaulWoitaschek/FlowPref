@@ -14,19 +14,6 @@ class AndroidPreferences(private val sharedPrefs: SharedPreferences) {
 
   private val registered = CopyOnWriteArrayList<AndroidPref<*>>()
 
-  // because the shared preferences use a week reference when registering, we need to keep a reference
-  private val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
-    registered.forEach { pref ->
-      if (pref.key == key) {
-        pref.notifyChanged()
-      }
-    }
-  }
-
-  init {
-    sharedPrefs.registerOnSharedPreferenceChangeListener(listener)
-  }
-
   @Suppress("unused")
   fun <T> create(key: String, default: T, adapter: PrefAdapter<T>): Pref<T> {
     return create(key, default, DelegatingPrefAdapter(adapter))

@@ -4,6 +4,8 @@ plugins {
 
 apply plugin: 'kotlin'
 
+archivesBaseName = "flowPref-inMemory"
+
 publishing {
     publications {
         release(MavenPublication) {

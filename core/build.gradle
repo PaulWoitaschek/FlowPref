@@ -4,6 +4,8 @@ plugins {
 
 apply plugin: "kotlin"
 
+archivesBaseName = "flowPref-core"
+
 publishing {
     publications {
         release(MavenPublication) {
