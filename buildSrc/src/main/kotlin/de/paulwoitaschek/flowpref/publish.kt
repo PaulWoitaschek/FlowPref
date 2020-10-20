@@ -16,7 +16,7 @@ fun Project.configurePublishing() {
         publications {
           create<MavenPublication>("maven") {
             groupId = "com.github.PaulWoitaschek"
-            version = "1.0.1-rc1"
+            version = "1.0.1"
             this.artifactId = project.name.toArtifactName()
             val componentName = if (project.pluginManager.hasPlugin("com.android.library")) {
               "release"
