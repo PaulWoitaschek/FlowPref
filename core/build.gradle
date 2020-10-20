@@ -4,7 +4,7 @@ plugins {
 
 apply plugin: "kotlin"
 
-archivesBaseName = "flowPref-core"
+project.archivesBaseName = "flowPref-core"
 
 publishing {
     publications {

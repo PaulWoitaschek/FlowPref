@@ -4,7 +4,7 @@ plugins {
 
 apply plugin: 'kotlin'
 
-archivesBaseName = "flowPref-inMemory"
+project.archivesBaseName = "flowPref-inMemory"
 
 publishing {
     publications {
