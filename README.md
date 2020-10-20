@@ -46,6 +46,9 @@ And add the dependency:
 dependencies {
     // android implementation
     implementation 'com.github.PaulWoitaschek.FlowPref:android:x.y.z'
+    
+    // core only, useful for consuming kotlin-only modules
+    implementation 'com.github.PaulWoitaschek.FlowPref:core:x.y.z'
 
     // an in-memory implementation, useful for testing. Pure kotlin
     implementation 'com.github.PaulWoitaschek.FlowPref:in-memory:x.y.z'
