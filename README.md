@@ -1,3 +1,7 @@
+# DEPRECATED
+
+I recommend to use [Jetpack Datastore](https://developer.android.com/topic/libraries/architecture/datastore) instead.
+
 # FlowPref ![](https://github.com/PaulWoitaschek/FlowPref/workflows/CI/badge.svg)
 
 FlowPref is a library for making Preferences composable, typesafe and reactive (by exposing a kotlin Flow).
