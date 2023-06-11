@@ -32,7 +32,7 @@ dependencies {
   api("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
   api("org.jetbrains.kotlinx:kotlinx-coroutines-core")
 
-  implementation("androidx.core:core-ktx:1.3.2")
+  implementation("androidx.core:core-ktx:1.10.1")
 
   androidTestImplementation("androidx.test.ext:junit:1.1.5")
   androidTestImplementation("androidx.test:core:1.5.0")
