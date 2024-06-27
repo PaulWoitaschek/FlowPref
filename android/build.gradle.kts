@@ -36,7 +36,7 @@ dependencies {
 
   androidTestImplementation("androidx.test.ext:junit:1.1.5")
   androidTestImplementation("androidx.test:core:1.5.0")
-  androidTestImplementation("androidx.test:rules:1.3.0")
+  androidTestImplementation("androidx.test:rules:1.6.1")
   androidTestImplementation("androidx.test:runner:1.3.0")
   androidTestImplementation("com.google.truth:truth:1.1.4")
   androidTestImplementation("junit:junit:4.13.2")
