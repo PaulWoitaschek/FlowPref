@@ -43,6 +43,6 @@ dependencies {
   androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-android")
   androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test")
 
-  androidTestUtil("androidx.test:orchestrator:1.4.2")
+  androidTestUtil("androidx.test:orchestrator:1.5.1")
 }
 
